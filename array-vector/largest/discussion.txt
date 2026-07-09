@@ -1,0 +1,9 @@
+so we solve the maximum of array by brute force solution by sorting tc is O(NLOGN) and sc is O(LOGN)
+
+better tc can be O(N)  O(LOGN) N size of vector/array
+
+O(logN)=>not every element access kuch chut jate hai so it this case kya pata us jagah maximum ho so
+thats why it is not possible
+
+and O(N) is important as pura array ek baar check hone ke baad hi hum maximum of array decide kr sktey hai
+so lets make optimal solution
