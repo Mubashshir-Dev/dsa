@@ -12,6 +12,7 @@ void is_sorted(vector <int> &nums){
             cout<<"NOT SORTED"<<endl;
             return;
         }
+        prev=nums[i];
     }
     cout<<"SORTED"<<endl;
     return ;
