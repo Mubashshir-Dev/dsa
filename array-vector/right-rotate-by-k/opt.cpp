@@ -3,6 +3,7 @@
 using namespace std;
 
 void rev(vector <int> & arr,int start,int end){
+    //tc -> O(N/2)  sc-> O(1)
     while(start<end){
         swap(arr[start],arr[end]);
         start++;
@@ -10,11 +11,12 @@ void rev(vector <int> & arr,int start,int end){
     }
 }
 
-void l_rotate_by_k(vector <int> & arr,int k){
+void r_rotate_by_k(vector <int> & arr,int k){
+    //tc O(2N) sc O(1)
     if(arr.empty())return;
     k%=arr.size();
-    rev(arr,0,k-1);
-    rev(arr,k,arr.size()-1);
+    rev(arr,arr.size()-k,arr.size()-1);
+    rev(arr,0,arr.size()-k-1);
     rev(arr,0,arr.size()-1);
 }
 
@@ -26,7 +28,7 @@ int main(){
     cin>>size;
     vector <int> nums(size);
     for(int i = 0 ; i < size ; i++)cin>>nums[i];
-    l_rotate_by_k(nums,k);
+    r_rotate_by_k(nums,k);
     for(int i = 0 ; i < size ; i++){
         cout<<nums[i]<<" ";
     }
