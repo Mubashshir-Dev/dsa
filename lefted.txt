@@ -1,0 +1,7 @@
+sorted && roated true false
+union of twp sorted array
+find missing number
+max consecutive one
+find-the-number-that-appears-once-and-the-other-numbers-twice
+longest-subarray-with-given-sum-k/
+length-of-the-longest-subarray-with-zero-sum/
