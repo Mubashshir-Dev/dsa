@@ -1,5 +1,7 @@
-sorted && roated true false
+sorted && roated true false(leetcode)
+
 union of twp sorted array
+intersecrtion
 find missing number
 max consecutive one
 find-the-number-that-appears-once-and-the-other-numbers-twice

@@ -4,3 +4,4 @@ using set usets
 hashing using vector map umaps
 2 ptr
 rotate
+concept of extra space vs space (sc)
