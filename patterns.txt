@@ -5,3 +5,4 @@ hashing using vector map umaps
 2 ptr
 rotate
 concept of extra space vs space (sc)
+xor approach
