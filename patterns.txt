@@ -1,8 +1,9 @@
 sortings
 traverse
 using set usets
-hashing using vector map umaps
+hashing using vector map umap
 2 ptr
 rotate
 concept of extra space vs space (sc)
 xor approach
+subarray genration O(N^3)
