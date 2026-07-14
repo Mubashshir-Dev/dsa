@@ -3,9 +3,5 @@ sorted && roated true false(leetcode)
  
 intersecrtion
 
-
-
-
-find-the-number-that-appears-once-and-the-other-numbers-twice
 longest-subarray-with-given-sum-k/
 length-of-the-longest-subarray-with-zero-sum/

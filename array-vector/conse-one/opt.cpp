@@ -3,6 +3,7 @@
 using namespace std;
 
 int find(vector <int> &arr){
+    //O(N) O(1)tc sc
     int maxi = 0;
     int count = 0;
     for(int i = 0; i < arr.size() ; i++){
