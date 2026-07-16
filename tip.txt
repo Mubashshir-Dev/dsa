@@ -1,0 +1,12 @@
+Golden Rule 🔥
+
+Time ka lower bound problem batati hai.
+
+Space ka lower bound algorithm batata hai.
+
+Isliye experienced programmers jab question padhte hain, turant do cheezein sochte hain:
+
+Can I do it in-place? → Agar haan, target O(1) SC.
+Agar nahi, minimum kya store karna padega? → Usi se SC ka andaaza lagta hai.
+
+Ye intuition practice se aati hai. Tum jitne zyada DSA questions karoge, utna jaldi question dekhte hi bol paoge: "Iska O(1) space solution possible hai" ya "Nahi, isme O(n) extra space unavoidable lag rahi hai."

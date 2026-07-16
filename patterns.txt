@@ -7,3 +7,5 @@ rotate
 concept of extra space vs space (sc)
 xor approach
 subarray genration O(N^3)
+simulating
+DP(constructive algo){remembering the past)
