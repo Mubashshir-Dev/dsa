@@ -12,3 +12,4 @@ DP(constructive algo){remembering the past)
 3 ptr 
 dnf
 Boyer-Moore Voting Algorithm
+prefix sum
