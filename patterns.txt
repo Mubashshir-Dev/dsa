@@ -9,3 +9,6 @@ xor approach
 subarray genration O(N^3)
 simulating
 DP(constructive algo){remembering the past)
+3 ptr 
+dnf
+Boyer-Moore Voting Algorithm

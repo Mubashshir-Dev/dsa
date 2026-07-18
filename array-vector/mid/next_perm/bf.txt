@@ -1,0 +1,18 @@
+inputed array size n 
+total possible permutation n!(worst case if no two same digits)
+
+
+so i will genrate all permutation using recursion
+
+and store them to array
+
+then i linear search in my array / bs 
+
+to find that array if that is in array at last index then i will return first permu 
+
+else i will be return next of inputted permu from array
+
+very time consuming space consuming
+
+tc N!xN
+//tc and sc will be clear on recurssion part

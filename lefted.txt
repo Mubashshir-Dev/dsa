@@ -5,3 +5,6 @@ intersecrtion
 
 longest-subarray-with-given-sum-k/
 length-of-the-longest-subarray-with-zero-sum/
+
+
+next permu bf (came after learning recursion)
