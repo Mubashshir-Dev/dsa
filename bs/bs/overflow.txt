@@ -1,0 +1,16 @@
+low = 0
+high = INT_MAX
+
+low = INT_MAX/2
+
+low + high)/2 overflow
+
+use long long or better way
+
+use math
+
+low + high + low - low
+__________  
+    2
+
+int mid = low+(high-low)/2;
