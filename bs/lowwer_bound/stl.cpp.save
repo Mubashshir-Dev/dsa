@@ -1,0 +1,20 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+int main(){
+	int size;
+	cin >> size;
+	vector <int> vect(size);
+	for(int i = 0 ; i < size ; i++){
+		cin>>vect[i];}
+	int tar;
+	cin>>tar;
+	lower_bound(vect.begin(),vect.end(),tar);
+
+	cout<<"ans : "<<lower_bound(vect.begin(),vect.end(),tar);
+	return 0;
+}
+
+
