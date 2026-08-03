@@ -1,0 +1,375 @@
+so first of all we have an array or vector of data type integer(any order sorted or unsorted)
+
+now 2 cases are here
+1. distinct elements
+2. non distinct elements
+
+now we have to find an element in array/vector
+
+cases
+1. element is in collection(arr/vect)
+2. not in collection
+
+## for distinct elements case
+
+brute force solution is linear search
+1. element is in collection(arr/vect)  return index
+2. not in collection return -1
+
+so, linear search is algo in which we traverse whole array each element one time and check wether is it equal to the targeted element
+O(N) is timecomplexity
+O(1) is spacecomplexity
+
+tc avgcase O(N/2)
+tc bestcase O(1)
+
+int i = 0;
+for(int x : arr ){
+    if(x==key){
+        return i}
+    i++;
+}
+return -1;
+
+
+## for non distinct elements case
+here it might be asked to print either first occurance index or last occurance index or any specific occurance index so
+
+
+>> first occurance index
+int i = 0;
+for(int x : arr ){
+    if(x==key){
+        return i}
+    i++;
+}
+return -1;
+
+
+>> last occurance index
+
+int i = 0;
+int ans = -1;
+for(int x : arr ){
+    if(x==key){
+        ans=i}
+    i++;
+}
+return ans;
+
+>> specific occurance
+int occurance=0;
+int specific_occ;
+cin>>specific_occ;
+int i = 0;
+for(int x : arr ){
+    if(x==key){
+        occurance++;
+        if(occurance==specific_occ){
+        return i;}
+        }
+    i++;
+}
+return -1;
+
+all the solution will work on sorted or unsorted or in any order
+
+
+
+now suppose we get an sorted collection(arr/vect) is linear search is a good solution?
+no optimal solution exsist bro
+
+how let us discuss
+
+so first of all we have an array or vector of data type integer(only sorted)
+[not first of all second of all :) ]
+
+sorted here doesnt mean just increasing order but both decreasing too thats why monotonic array is a much better word to use okay
+
+to solve it in even more optimal way then linear search we use binary search
+
+so what is binary search binary search is an algorithm which search elements in monotonic collection(arr/vect) in efficient manner faster then(linear search genreally)
+
+okay so
+
+
+now 2 cases are here
+1. distinct elements
+2. non distinct elements
+
+now we have to find an element in array/vector
+
+cases
+1. element is in collection(arr/vect)
+2. not in collection
+
+## distinct case
+lets think of an dictonary each page is marked as a char
+A to Z
+now we have a target page where we have to look kite's meaning so our target is page of char k
+
+(rule for selecting middle)
+
+case1 total no of elements odd
+case2 total no of elements even
+
+in case 1 mid will be equi distance from each end like 3 in 1 2 3 4 5
+in case 2 mid will be almost equi distance from each end but not exactly from one side it is more closer then other eg 2  in 1 2 3 4
+(in case 2 its totally on you which one side you gonna choose like 2 3 in  1 2 3 4 ) (for standard binary search use first one cause it is standard)
+both will work fine
+
+
+
+A to Z > mid > M
+M
+
+target k<M
+hence my target page will be came on left side
+i will shrink my search space how
+what i will do is set sequene A to Z to > A to L
+
+(L is prev to M)
+
+next mid will be F
+search space shrink
+
+G to L
+
+next mid i
+
+J to L
+
+mid will be K and exit print K page no which is 11
+
+this is how binary search work
+(steps :- mid calculation, compare to key , elimination/searchSpaceShrink ,repeat till end)
+
+if not found return -1
+
+with better examples
+
+1 2 3 4 5
+to find 3
+mid is 3 index is 2
+
+1 2 3 4
+to find 2
+mid is 2 index 1
+
+
+1 2 3 4 5 6 7 8 9 10
+to find 7
+mid is 5
+5 is less then 7 so go to right
+6 7 8 9 10
+mid is 8
+8 is bigger then seven go to left
+6 7
+6 is bigger
+move right
+7
+mid is 7
+7 is equal found
+
+
+2 3 4 5 6 7 8
+mid  5
+5>1
+go to left
+2 3 4
+mid 3 > 1
+2
+mid 2 > 1
+nothing left
+return -1
+
+observation keep eliminating till the element found or searchspace shrink to 0
+
+
+now how to find mid element
+
+1 way ( last element + first element) / 2 (ap property / average/mid point formula)
+2 way
+
+by logic half of the length between ends added to first element
+
+or by mathametic manupluation in 1 way +low -low  or high
+
+(low + (high-low)/2)
+
+(key point +low -low will be readable)(and save us from integer overflow how what can be max values of last and first element INT_MAX and sum of there will be overflow thats why 2 way tackle this problem)
+
+in case of +high -high
+it will work like
+1 2 3 4
+3 is mid
+(but it is not a problem as comparison and shrinkage of search space will fix)
+
+
+## so implementation
+
+low high pointers rest on end points first and last respectively
+
+// for increasing order
+
+int low = 0;
+int high = arr.size();
+while(low <= high){
+    int mid = low + (high-low)/2;
+    if(arr[mid]==key){
+    return mid;}
+    else if(arr[mid ]>key){
+    high=mid-1;}
+    else{
+    low=mid+1;}
+}
+return -1;
+
+// for decreasing order
+
+int low = 0;
+int high = arr.size();
+while(low <= high){
+    int mid = low + (high-low)/2;
+    if(arr[mid]==key){
+    return mid;}
+    else if(arr[mid ]>key){
+    low=mid+1;}
+    else{
+    high=mid-1;}
+}
+return -1;
+
+
+## for non distinct element
+
+#1st occurance
+same code for distinct element
+
+#last occurance
+
+
+// for increasing order
+
+int low = 0;
+int high = arr.size();
+int store = -1;
+while(low <= high){
+    int mid = low + (high-low)/2;
+    if(arr[mid]==key){
+    store= mid;}
+    else if(arr[mid ]>key){
+    high=mid-1;}
+    else{
+    low=mid+1;}
+}
+return store;
+
+// for decreasing order
+
+int low = 0;
+int high = arr.size();
+int store = -1;
+while(low <= high){
+    int mid = low + (high-low)/2;
+    if(arr[mid]==key){
+    store= mid;}
+    else if(arr[mid ]>key){
+    low=mid+1;}
+    else{
+    high=mid-1;}
+}
+return store;
+
+# for any specific occurance
+
+// for increasing order
+
+int s_occ;
+cin>>s_occ;
+int occ = 0;
+int low = 0;
+int high = arr.size();
+while(low <= high){
+    int mid = low + (high-low)/2;
+    if(arr[mid]==key){
+    occ++;
+    if(occ==s_occ)return mid;}
+    else if(arr[mid ]>key){
+    high=mid-1;}
+    else{
+    low=mid+1;}
+}
+return -1;
+
+// for decreasing order
+
+
+int s_occ;
+cin>>s_occ;
+int occ = 0;
+int low = 0;
+int high = arr.size();
+while(low <= high){
+    int mid = low + (high-low)/2;
+    if(arr[mid]==key){
+    occ++;
+    if(occ==s_occ)return mid;}
+    else if(arr[mid ]>key){
+    low=mid+1;}
+    else{ low=mid+1;
+    }
+}
+return -1;
+
+
+now tc and sc of binary search
+lets say i have collection of size N
+N > N/2 > N/2^2 > N/2^3 > N/2^4 ..... > N/2^k
+at N/2^k array size became 1
+
+N/2^k = 1
+N = 2 ^ k
+taking log2n both side
+log2(N)=k
+k steps taken (k eliminations)
+tc O(logN) O(log2N)
+sc O(1)
+
+so can we see a pattern
+
+calculate mid
+compare
+shrink search space
+repeat
+
+repated works can be done by recurrsion
+(good for just recurssion practice not good for use as extra stack space O(logN) as k for k steps log2n func call take place so)
+
+implementation
+
+1 2 3 4 5 6 7 8 9 10
+
+         f(arr,0,9,10)(9)
+            /          |
+        f(arr,5,9,10)  |
+          /            |
+       f(arr,7,9,10)   |
+       /               |
+      f(arr,8,9,10)    |
+     /                 |
+    f(arr,9,9,10)     (9)
+
+
+int bs(vector <int> & arr,low,high,tar){
+    //base case
+    if(low>close) return -1;
+    int mid = low + (high-low)/2;
+    if(arr[mid]==key)return mid;
+    else if(arr[mid]>key)return bs(arr,low,mid-1,tar);
+    return bs(arr,mid+1,high,tar);
+}
+
+bs(arr,0,arr.size()-1,<tar>)
+
+O(logN) O(logN) tc sc
