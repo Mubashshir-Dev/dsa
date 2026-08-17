@@ -1,18 +1,16 @@
 #include <iostream>
 
 int ls(int arr[],int size,int key,int occ){
-	int indx =-1;
 	int count=0;
 	for(int i = 0 ; i < size ;i++){
 		if(arr[i]==key){
 			count++;
-			indx=i;
-			if(count==occ)return indx;
-			
+		}
+		if(count==occ){
+			return i;
 		}
 	}
-	if(count==occ)return
-	return indx;
+	return -1;
 }
 
 int main(){
