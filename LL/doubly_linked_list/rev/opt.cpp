@@ -32,7 +32,15 @@ Node* arr2ll(int arr[],int size){
 }
 
 Node* rev(Node* head){
-
+    //O(N)
+    if(head == nullptr) return nullptr;
+    Node* temp = head;
+    while(temp==head || temp->prev!=nullptr){
+        swap(temp->prev,temp->next);
+        if(temp!=head && temp->prev==nullptr)break;
+        temp=temp->prev;
+    };
+    return temp;
 }
 
 int main(){
