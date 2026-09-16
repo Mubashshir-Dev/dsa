@@ -15,6 +15,7 @@ public:
 };
 
 Node* kth(Node* head, int k , int data){
+	//O(N)
     if(head==nullptr)return nullptr;
 	if(k==1){
 		Node* temp = new Node(data,head,nullptr);
