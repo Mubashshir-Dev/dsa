@@ -1,4 +1,5 @@
 #include <iostream>
+//LL should be of size 1000 can increase by changing program max size of link list for that program works 10^6 , 10^7 if arr will be in global scope
 //slow fast poinetr technique
 using namespace std;
 
@@ -28,16 +29,24 @@ Node* arr2ll(int arr[], int size){
     return head;
 }
 
-Node* mid_(Node* head){
-    //O(N)
+Node* rev(Node* head){
+    //O(2N)tc 
+    //O(N)sc
     if(head==nullptr)return nullptr;
-    Node* slow = head;
-    Node* fast = head;
-    while(fast!=nullptr && fast->next!=nullptr){
-        slow=slow->next;
-        fast=fast->next->next;
+    int arr[1000];
+    int ptr = 0;
+    Node* temp = head;
+    while(temp!=nullptr){
+        arr[ptr++]=temp->data;
+        temp=temp->next;
     }
-    return slow;
+    ptr--;
+    temp=head;
+    for(int i = ptr; i >= 0; i--){
+        temp->data=arr[i];
+        temp=temp->next;
+    }
+    return head;
 }
 
 
@@ -49,6 +58,10 @@ int main(){
         cin>>arr[i];
     }
     Node* head = arr2ll(arr,size);
-    cout<<mid_(head)<<" ";
+    Node* temp = head;
+    while(temp!=nullptr){
+        cout<<temp->data<<endl;
+        temp=temp->next;
+    }
     return 0;
 }

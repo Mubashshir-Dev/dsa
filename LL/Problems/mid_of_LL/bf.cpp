@@ -29,6 +29,7 @@ Node* arr2ll(int arr[], int size){
 }
 
 Node* mid_(Node* head){
+    //O(N) buts its take more steps
     if(head==nullptr)return nullptr;
     Node* temp = head;
     int count = 0;
